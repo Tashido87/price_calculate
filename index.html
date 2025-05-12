@@ -123,29 +123,29 @@
             const resultAmount = document.getElementById('result');
             
             // Calculate function
-            function calculate() {
-                const yuanValue = parseFloat(yuanInput.value);
-                
-                if (isNaN(yuanValue) || yuanValue <= 0) {
-                    alert('Please enter a valid amount in Chinese Yuan');
-                    return;
-                }
-                
-                // Calculate: (yuan × 625) + 3%
-                const mmkValue = (yuanValue * 650) * 1.03;
-                const formattedMMK = Math.round(mmkValue).toLocaleString('en-US');
-                });
-                
-                resultAmount.textContent = formattedMMK + ' MMK';
-                resultText.textContent = `သယ်ယူစရိတ်မပါဘဲ ဝယ်ရင်းဈေးမှာ ${formattedMMK} MMK ခန့်ရှိပါမယ်`;
-                
-                // Show result with animation
-                resultBox.classList.add('show');
-                setTimeout(() => {
-                    resultContent.classList.add('fade-in');
-                    resultContent.classList.remove('opacity-0');
-                }, 100);
-            }
+function calculate() {
+    const yuanValue = parseFloat(yuanInput.value);
+    
+    if (isNaN(yuanValue) || yuanValue <= 0) {
+        alert('Please enter a valid amount in Chinese Yuan');
+        return;
+    }
+    
+    // Calculate: (yuan × 650) + 3%
+    const mmkValue = (yuanValue * 650) * 1.03;
+    const formattedMMK = Math.round(mmkValue).toLocaleString('en-US');
+    
+    resultAmount.textContent = formattedMMK + ' MMK';
+    resultText.textContent = `သယ်ယူစရိတ်မပါဘဲ ဝယ်ရင်းဈေးမှာ ${formattedMMK} MMK ခန့်ရှိပါမယ်`;
+    
+    // Show result with animation
+    resultBox.classList.add('show');
+    setTimeout(() => {
+        resultContent.classList.add('fade-in');
+        resultContent.classList.remove('opacity-0');
+    }, 100);
+}
+
             
             // Reset function
             function reset() {
