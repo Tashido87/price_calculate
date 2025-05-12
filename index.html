@@ -46,25 +46,19 @@
         }
         
         .result-box {
-            transition: all 0.5s ease;
-            max-height: 0;
-            overflow: hidden;
-        }
-        
-        .result-box.show {
-            max-height: 200px;
-        }
+    transition: all 0.5s ease;
+    max-height: none;  /* Remove the fixed max-height */
+    overflow: visible; /* Allow content to overflow */
+}
 
-        #resultContent {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+#resultContent {
+    white-space: normal; /* Allow text to wrap if necessary */
+    word-wrap: break-word; /* Ensure text wraps if it's too long */
 }
 
 #result {
-    white-space: nowrap;
+    white-space: normal; /* Allow text to wrap */
 }
-
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
