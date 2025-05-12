@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chinese Yuan to MMK Converter</title>
+    <title>Chinese Shopping Calculator</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -133,9 +133,7 @@
                 
                 // Calculate: (yuan × 625) + 3%
                 const mmkValue = (yuanValue * 650) * 1.03;
-                const formattedMMK = mmkValue.toLocaleString('en-US', {
-                    maximumFractionDigits: 2,
-                    minimumFractionDigits: 2
+                const formattedMMK = Math.round(mmkValue).toLocaleString('en-US');
                 });
                 
                 resultAmount.textContent = formattedMMK + ' MMK';
